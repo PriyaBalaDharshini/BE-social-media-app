@@ -10,6 +10,9 @@ dotenv.config();
 
 const app = express();
 
+app.use("/", (req, res) => {
+    res.status(200).send({ message: "Welcome to Social Media Backend" })
+})
 //1. DB connection
 const PORT = process.env.PORT
 mongoose.connect(`${process.env.DB_URL}/${process.env.DB_NAME}`)
